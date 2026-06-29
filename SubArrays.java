@@ -8,24 +8,16 @@ public class SubArrays {
     public static void printSubArrays(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
-                int sum = 0, min = 0, max = 0;
+                int sum = 0;
                 for (int k = i; k <= j; k++) {
                     System.out.print(arr[k] + " ");
                     sum = sum + arr[k];
                 }
-
-                if (min > sum) {
-                    min = sum;
-                }
-                if (max < sum) {
-                    max = sum;
-                }
-                System.out.println("sum = " + sum);
-                System.out.print("min : " + min + " max : " + max);
+                System.out.print("sum = " + sum);
                 System.out.println();
             }
             System.out.println();
         }
-        
+
     }
 }
