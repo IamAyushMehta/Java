@@ -14,12 +14,13 @@ public class MaxSubArraySum {
                 for (int k = i; k <= j; k++) {
                     currMax += arr[k];
                 }
-                System.out.print(currMax);
+                System.out.println(currMax);
                 if (totalMax < currMax) {
                     totalMax = currMax;
                 }
             }
         }
-        System.out.println("Max sum "+ totalMax);
+
+        System.out.println("Max sum " + totalMax);
     }
 }
