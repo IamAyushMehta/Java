@@ -8,12 +8,9 @@ public class SubArrays {
     public static void printSubArrays(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = i; j < arr.length; j++) {
-                int sum = 0;
                 for (int k = i; k <= j; k++) {
                     System.out.print(arr[k] + " ");
-                    sum = sum + arr[k];
                 }
-                System.out.print("sum = " + sum);
                 System.out.println();
             }
             System.out.println();

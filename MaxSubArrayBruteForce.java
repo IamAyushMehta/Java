@@ -1,11 +1,11 @@
-public class MaxSubArraySum {
+public class MaxSubArrayBruteForce {
     public static void main(String[] args) {
         int arr[] = { 2, 4, 6, 8, 10 };
 
-        maxSubArraySum(arr);
+        bruteForce(arr);
     }
 
-    public static void maxSubArraySum(int arr[]) {
+    public static void bruteForce(int arr[]) {
         int currMax = 0;
         int totalMax = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
@@ -20,7 +20,6 @@ public class MaxSubArraySum {
                 }
             }
         }
-
         System.out.println("Max sum " + totalMax);
     }
 }
