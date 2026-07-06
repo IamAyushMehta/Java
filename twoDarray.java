@@ -30,5 +30,7 @@ public class twoDarray {
         }
         System.out.println("smallest : " + smallest);
         System.out.println("largest : " + largest);
+
+        sc.close();
     }
 }
