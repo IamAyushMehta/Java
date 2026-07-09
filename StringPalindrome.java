@@ -8,6 +8,8 @@ public class StringPalindrome {
         String str = sc.next();
 
         System.out.println(stringPalindrome(str));
+
+        sc.close();
     }
 
     public static boolean stringPalindrome(String str) {
