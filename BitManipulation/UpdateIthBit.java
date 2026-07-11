@@ -23,5 +23,7 @@ public class UpdateIthBit {
         n = clearIthBit(n, i); // Approach 2
         int bitMask = newBit << i;
         return n | bitMask;
+
+        // time complexity of both approach is same
     }
 }
