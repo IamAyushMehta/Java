@@ -17,7 +17,7 @@ public class UniqueElementInArray {
     // return false;
     // }
 
-    public static boolean uniqueElementInArray(int nums[]) { // Effective Solution
+    public static boolean uniqueElementInArray(int nums[]) { // Effective
         for (int i = nums.length - 1; i > 0; i--) {
             if (nums[0] == nums[i]) {
                 return true;
@@ -25,5 +25,4 @@ public class UniqueElementInArray {
         }
         return false;
     }
-
 }
