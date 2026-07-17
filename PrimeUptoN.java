@@ -1,15 +1,12 @@
 public class PrimeUptoN {
 
     public static boolean isPrime(int n) {
-        boolean isPrime = true;
-
         for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
-                isPrime = false;
-                break;
+                return false;
             }
         }
-        return isPrime;
+        return true;
     }
 
     public static void PrimeUptoNum(int n) {
