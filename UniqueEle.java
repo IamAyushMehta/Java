@@ -1,8 +1,8 @@
-public class UniqueElementInArray {
+public class UniqueEle {
     public static void main(String[] args) {
         int nums[] = { 20, 10, 50, 50, 30, 20, 10 };
 
-        System.out.println(uniqueElemInArray(nums));
+        System.out.println(uniqueEle(nums));
     }
 
     // BruteForce
@@ -17,7 +17,7 @@ public class UniqueElementInArray {
     // return false;
     // }
 
-    public static boolean uniqueElemInArray(int nums[]) { // Effective
+    public static boolean uniqueEle(int nums[]) { // Effective
         for (int i = nums.length - 1; i > 0; i--) {
             if (nums[0] == nums[i]) {
                 return true;
