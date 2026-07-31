@@ -1,13 +1,6 @@
-/**
- * Main
- */
-public class Main {
-    public static int sum(int n) {
-        if (n == 0) {
-            return n;
-        }
-        return n + sum(n - 1);
-    }
+import java.util.Scanner;
+
+public class PrintNumber {
 
     public static void printInc(int n) {
         if (n == 1) {
@@ -28,7 +21,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int n = 10;
-        printDec(n);
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("enter number : ");
+        int n = sc.nextInt();
+
+        printInc(n);
+        sc.close();
     }
 }
