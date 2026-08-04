@@ -1,7 +1,7 @@
 public class SwapAdjacentElement {
 
     public static void main(String[] args) {
-        int arr[] = { 5, 6, 3, 1, 7 };
+        int arr[] = { 1, 2, 3, 4, 5 };
 
         swapAdjacent(arr);
     }
