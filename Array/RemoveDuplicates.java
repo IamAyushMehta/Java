@@ -3,7 +3,7 @@ public class RemoveDuplicates {
         int i = 0;
         int j = 1;
         int n = arr.length;
-        while (j < arr.length) {
+        while (j < n) {
             if (arr[i] != arr[j]) {
                 i++;
                 arr[i] = arr[j];
@@ -22,6 +22,7 @@ public class RemoveDuplicates {
 
     public static void main(String[] args) {
         int arr[] = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
+
         System.out.println(removeDuplicates(arr));
         printArray(arr);
     }
