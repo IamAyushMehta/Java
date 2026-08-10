@@ -2,15 +2,12 @@ import java.util.*;
 
 public class Prime {
     public static boolean isPrime(int n) {
-        boolean isPrime = true;
-
-        for (int i = 2; i <= n - 1; i++) {
+        for (int i = 2; i * i <= n; i++) {
             if (n % i == 0) {
-                isPrime = false;
-                break;
+                return false;
             }
         }
-        return isPrime;
+        return true;
     }
 
     public static void main(String args[]) {
@@ -20,10 +17,10 @@ public class Prime {
         int n = sc.nextInt();
 
         boolean Prime = isPrime(n);
-        if (Prime == true) {
-            System.out.println("Prime");
+        if (Prime) {
+            System.out.print("Prime");
         } else {
-            System.out.println("Not Prime");
+            System.out.print("Not Prime");
         }
 
         sc.close();

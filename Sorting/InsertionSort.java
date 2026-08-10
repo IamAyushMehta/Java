@@ -19,9 +19,9 @@ public class InsertionSort {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 5, 4, 3, 2, 1 };
+        int arr[] = { 8, 1, 6, 5, 2 };
 
         insertionSort(arr);
-        PrintArray.printArray(arr);
+        printArray(arr);
     }
 }

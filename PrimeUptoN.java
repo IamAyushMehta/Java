@@ -1,7 +1,10 @@
 public class PrimeUptoN {
 
     public static boolean isPrime(int n) {
-        for (int i = 2; i <= Math.sqrt(n); i++) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i * i <= n; i++) {
             if (n % i == 0) {
                 return false;
             }
@@ -9,18 +12,14 @@ public class PrimeUptoN {
         return true;
     }
 
-    public static void PrimeUptoNum(int n) {
-        for (int i = 2; i <= n; i++) {
-            if (isPrime(i)) {
-                System.out.print(i + " ");
-            }
-        }
-    }
-
     public static void main(String args[]) {
 
         int num = 20;
         System.out.print("Prime : ");
-        PrimeUptoNum(num);
+        for (int i = 2; i <= num; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
     }
 }
