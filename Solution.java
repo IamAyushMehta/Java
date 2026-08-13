@@ -1,23 +1,19 @@
-/**
- * Solution
- */
+import java.util.Arrays;
+
 public class Solution {
-    public static boolean isPrime(int n) {
-        for (int i = 2; i * i <= n; i++) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-        return true;
+    public static void stringSort(String s) {
+        char arr[] = s.toCharArray();
+
+        Arrays.sort(arr);
+
+        String str = new String(arr);
+
+        System.err.println(str);
     }
 
     public static void main(String[] args) {
-        int n = 23;
-        System.out.print("Prime : ");
-        for (int i = 2; i <= n; i++) {
-            if (isPrime(i)) {
-                System.out.print(i + " ");
-            }
-        }
+        String s = "ayush";
+
+        stringSort(s);
     }
 }

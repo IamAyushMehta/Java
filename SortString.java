@@ -1,19 +1,19 @@
 import java.util.Arrays;
 
 public class SortString {
+    public static void stringSort(String s) {
+        char arr[] = s.toCharArray();
+
+        Arrays.sort(arr);
+
+        String str = new String(arr);
+
+        System.err.println(str);
+    }
+
     public static void main(String[] args) {
-        String original = "nagaram";
+        String s = "ayush";
 
-        // 1. Convert string to char array
-        char[] chars = original.toCharArray();
-
-        // 2. Sort the array using the built-in dual-pivot Quicksort
-        Arrays.sort(chars);
-
-        // 3. Convert the sorted char array back to a String
-        String sorted = new String(chars);
-
-        System.out.println("Sorted: " + sorted);
-        // Output: agimmnooprr
+        stringSort(s);
     }
 }
