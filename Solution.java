@@ -1,19 +1,15 @@
-import java.util.Arrays;
-
 public class Solution {
-    public static void stringSort(String s) {
-        char arr[] = s.toCharArray();
-
-        Arrays.sort(arr);
-
-        String str = new String(arr);
-
-        System.err.println(str);
+    public static boolean isSorted(int arr[]) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
-        String s = "ayush";
-
-        stringSort(s);
+        int arr[] = { 1, 2, 1, 4, 5 };
+        System.out.println(isSorted(arr));
     }
 }
