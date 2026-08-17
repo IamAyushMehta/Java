@@ -1,26 +1,51 @@
+/**
+ * Solution
+ */
 public class Solution {
-    public static int binarySearch(int arr[], int tar) {
-        int start = 0;
-        int end = arr.length - 1;
+    public static void mergeSort(int arr[], int low, int high) {
+        if (low >= high) {
+            return;
+        }
+        int mid = low + (high - low) / 2;
 
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-            if (tar == arr[mid]) {
-                return mid;
-            }
-            if (tar > arr[mid]) {
-                start = mid + 1;
+        mergeSort(arr, low, mid);
+        mergeSort(arr, mid + 1, high);
+        merge(arr, low, mid, high);
+    }
+
+    public static void merge(int arr[], int low, int mid, int high) {
+        int[] temp = new int[high - low + 1];
+        int i = low;
+        int j = mid + 1;
+        int k = 0;
+
+        while (i <= mid && j <= high) {
+            if (arr[i] < arr[j]) {
+                temp[k++] = arr[i++];
             } else {
-                end = mid - 1;
+                temp[k++] = arr[j++];
             }
         }
-        return -1;
+
+        while (i <= mid) {
+            temp[k++] = arr[i++];
+        }
+
+        while (j <= high) {
+            temp[k++] = arr[j++];
+        }
+
+        for (int x = 0; x < temp.length; x++) {
+            arr[low + x] = temp[x];
+        }
+
     }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 3, 4, 5 };
-        int search = 5;
-
-        System.out.println(binarySearch(arr, search));
+        int arr[] = { 5, 4, 3, 2, 1 };
+        mergeSort(arr, 0, arr.length - 1);
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
     }
 }
