@@ -2,33 +2,48 @@
  * Main
  */
 public class Main {
-    public static int sum(int n) {
-        if (n == 0) {
-            return n;
-        }
-        return n + sum(n - 1);
-    }
-
-    public static void printInc(int n) {
-        if (n == 1) {
-            System.out.print(n);
+    public static void mergeSort(int arr[], int si, int ei) {
+        if (si >= ei) {
             return;
         }
-        printInc(n - 1);
-        System.out.print(" " + n);
+        int mid = si + (ei - si) / 2;
+        mergeSort(arr, si, mid);
+        mergeSort(arr, mid + 1, ei);
+        merge(arr, si, mid, ei);
     }
 
-    public static void printDec(int n) {
-        if (n == 1) {
-            System.out.print(n);
-            return;
+    public static void merge(int arr[], int si, int mid, int ei) {
+        int temp[] = new int[ei - si + 1];
+        int i = si;
+        int j = mid + 1;
+        int k = 0;
+
+        while (i <= mid && j <= ei) {
+            if (arr[i] < arr[j]) {
+                temp[k++] = arr[i++];
+            } else {
+                temp[k++] = arr[j++];
+            }
         }
-        System.out.print(n + " ");
-        printDec(n - 1);
+
+        while (i <= mid) {
+            temp[k++] = arr[i++];
+        }
+
+        while (j <= ei) {
+            temp[k++] = arr[j++];
+        }
+
+        for (int x = 0; x < temp.length; x++) {
+            arr[x + si] = temp[x];
+        }
     }
 
     public static void main(String[] args) {
-        int n = 10;
-        printDec(n);
+        int arr[] = { 6, 3, 9, 5, 2, 8 };
+        mergeSort(arr, 0, arr.length - 1);
+        for (int x : arr) {
+            System.err.print(x + " ");
+        }
     }
 }

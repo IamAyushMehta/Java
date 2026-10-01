@@ -2,50 +2,22 @@
  * Solution
  */
 public class Solution {
-    public static void mergeSort(int arr[], int low, int high) {
-        if (low >= high) {
-            return;
-        }
-        int mid = low + (high - low) / 2;
-
-        mergeSort(arr, low, mid);
-        mergeSort(arr, mid + 1, high);
-        merge(arr, low, mid, high);
-    }
-
-    public static void merge(int arr[], int low, int mid, int high) {
-        int[] temp = new int[high - low + 1];
-        int i = low;
-        int j = mid + 1;
-        int k = 0;
-
-        while (i <= mid && j <= high) {
-            if (arr[i] < arr[j]) {
-                temp[k++] = arr[i++];
-            } else {
-                temp[k++] = arr[j++];
+    public static int[] insertionSort(int arr[]) {
+        for (int i = 1; i < arr.length; i++) {
+            int curr = arr[i];
+            int prev = i - 1;
+            while (prev >= 0 && arr[prev] > curr) {
+                arr[prev + 1] = arr[prev];
+                prev--;
             }
+            arr[prev + 1] = curr;
         }
-
-        while (i <= mid) {
-            temp[k++] = arr[i++];
-        }
-
-        while (j <= high) {
-            temp[k++] = arr[j++];
-        }
-
-        for (int x = 0; x < temp.length; x++) {
-            arr[low + x] = temp[x];
-        }
-
+        return arr;
     }
 
     public static void main(String[] args) {
-        int arr[] = { 5, 4, 3, 2, 1 };
-        mergeSort(arr, 0, arr.length - 1);
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
+        int arr[] = { 4, 3, 2, 1 };
+        insertionSort(arr);
+        PrintArray.printArray(arr);
     }
 }
