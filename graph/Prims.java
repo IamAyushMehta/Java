@@ -10,7 +10,7 @@ class Edge {
     }
 }
 
-public class Prim {
+public class Prims {
 
     public static int primMST(int V, ArrayList<ArrayList<Edge>> graph) {
 
