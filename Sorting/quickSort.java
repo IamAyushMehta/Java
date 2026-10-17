@@ -11,8 +11,8 @@ int partition(int arr[], int low, int high) {
     }
     i++;
     int temp = arr[i];
-    arr[i] = pivot;
-    pivot = temp;
+    arr[i] = arr[high];
+    arr[high] = temp;
     return i;
 }
 
